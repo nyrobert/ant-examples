@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ant Properties Example" default="display-properties">
+    <description>Ant Properties Example</description>
+    <property name="userProperty1" value="value1" />
+    <property file="build.properties" />
+    <target name="display-properties">
+        <echo message="User-defined properties:" />
+        <echo message="property1: ${userProperty1}" />
+        <echo message="property2: ${userProperty2}" />
+        <echo message="property3: ${userProperty3}" />
+        <echo message="--------------------" />
+        <echo message="Built-in properties:" />
+        <echo message="basedir: ${basedir}" />
+        <echo message="ant.file: ${ant.file}" />
+        <echo message="ant.version: ${ant.version}" />
+        <echo message="ant.home: ${ant.home}" />
+        <echo message="ant.project.name: ${ant.project.name}" />
+        <echo message="ant.project.default-target: ${ant.project.default-target}" />
+        <echo message="ant.project.invoked-targets: ${ant.project.invoked-targets}" />
+        <echo message="ant.java.version: ${ant.java.version}" />
+        <echo message="java.vendor: ${java.vendor}" />
+        <echo message="java.vm.name: ${java.vm.name}" />
+        <echo message="java.runtime.name: ${java.runtime.name}" />
+        <echo message="java.home: ${java.home}" />
+        <echo message="os.name: ${os.name}" />
+        <echo message="os.version: ${os.version}" />
+        <echo message="os.arch: ${os.arch}" />
+        <echo message="user.name: ${user.name}" />
+        <echo message="user.home: ${user.home}" />
+    </target>
+    <target name="local-property">
+        <local name="userProperty1" />
+        <property name="userProperty1" value="local value1" />
+        <echo message="User-defined local property:" />
+        <echo message="property1: ${userProperty1}" />
+    </target>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="run">
+    <description>Java Hello World! example with Ant</description>
+    <target name="compile">
+        <javac includeantruntime="false" srcdir="com/example/ant" destdir="." />
+    </target>
+    <target name="run" depends="compile">
+        <java classname="com.example.ant.HelloWorld" classpath="." />
+    </target>
+</project>

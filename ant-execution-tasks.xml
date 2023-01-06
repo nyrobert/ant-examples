@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <description>Ant execution tasks example</description>
+    <include file="ant-file-tasks.xml" as="file-tasks" />
+    <target name="hello">
+        <ant antfile="ant-hello-world.xml" target="hello" />
+    </target>
+    <target name="echo-message">
+        <echo message="Message: ${message}" />
+    </target>
+    <target name="target-call">
+        <antcall target="echo-message">
+            <param name="message" value="message1" />
+        </antcall>
+    </target>
+    <target name="list-files">
+        <apply executable="ls">
+            <arg value="-a" />
+            <fileset dir=".">
+                <patternset>
+                    <exclude name="**/org/**" />
+                </patternset>
+            </fileset>
+        </apply>
+    </target>
+</project>

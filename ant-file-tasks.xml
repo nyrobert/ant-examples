@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <description>Ant file tasks example</description>
+    <property name="directoryName" value="test1" />
+    <property name="fileName" value="file.txt" />
+    <target name="create-directory">
+        <mkdir dir="${directoryName}" />
+    </target>
+    <target name="create-file">
+        <touch file="${fileName}" />
+        <echo message="Writing file content" />
+        <echo file="${fileName}">Lorem ipsum dolor sit amet</echo>
+    </target>
+    <target name="delete-file">
+        <delete file="${fileName}" verbose="true" />
+    </target>
+    <target name="delete-directory">
+        <delete dir="${directoryName}" verbose="true" />
+    </target>
+</project>

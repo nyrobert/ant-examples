@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="hello">
+    <description>Ant Hello World! example</description>
+    <target name="hello">
+        <echo message="Hello world!" />
+    </target>
+</project>
