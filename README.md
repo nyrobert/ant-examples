@@ -18,7 +18,11 @@ Simple Java application for learning the Ant build tool
 * `ant -f ant-properties.xml`
 * `ant local-property -f ant-properties.xml`
 
-# File related tasks
+## Java related tasks
+
+* `ant` compile and run the sample Hello World! application
+
+## File related tasks
 
 * `ant create-file -f ant-file-tasks.xml`
 * `ant delete-file -f ant-file-tasks.xml`
