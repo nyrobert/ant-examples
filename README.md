@@ -17,6 +17,7 @@ Simple Java application for learning the Ant build tool
 
 * `ant -f ant-properties.xml`
 * `ant local-property -f ant-properties.xml`
+* `ant cli-property -DuserProperty1 "cli value" -f ant-properties.xml`
 
 ## Java related tasks
 
