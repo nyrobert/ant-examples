@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project default="run">
     <description>Java Hello World! example with Ant</description>
+    <property name="targetDirectory" value="target" />
     <target name="compile">
-        <javac includeantruntime="false" srcdir="com/example/ant" destdir="." />
+        <mkdir dir="${targetDirectory}" />
+        <javac includeantruntime="false" srcdir="com/example/ant" destdir="${targetDirectory}" />
     </target>
     <target name="run" depends="compile">
         <java classname="com.example.ant.HelloWorld" classpath="." />
+        <delete dir="${targetDirectory}" />
     </target>
 </project>
