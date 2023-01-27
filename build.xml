@@ -7,7 +7,21 @@
         <javac includeantruntime="false" srcdir="com/example/ant" destdir="${targetDirectory}" />
     </target>
     <target name="run" depends="compile">
-        <java classname="com.example.ant.HelloWorld" classpath="." />
+        <java classname="com.example.ant.HelloWorld" classpath="${targetDirectory}" />
+        <antcall target="cleanup" />
+    </target>
+    <target name="jar" depends="compile">
+        <jar destfile="${targetDirectory}/app.jar" basedir="${targetDirectory}">
+            <manifest>
+                <attribute name="Main-Class" value="com.example.ant.HelloWorld" />
+            </manifest>
+        </jar>
+    </target>
+    <target name="run-jar" depends="jar">
+        <java jar="${targetDirectory}/app.jar" fork="true" failonerror="true" maxmemory="128m" />
+        <antcall target="cleanup" />
+    </target>
+    <target name="cleanup">
         <delete dir="${targetDirectory}" />
     </target>
 </project>

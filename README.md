@@ -22,6 +22,9 @@ Simple Java application for learning the Ant build tool
 ## Java related tasks
 
 * `ant` compile and run the sample Hello World! application
+* `ant compile`
+* `ant jar`
+* `ant run-jar`
 
 ## File related tasks
 
