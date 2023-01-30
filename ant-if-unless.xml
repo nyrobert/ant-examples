@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:if="ant:if" xmlns:unless="ant:unless">
+    <description>Ant If and Unless example (since Ant 1.9.1)</description>
+    <property name="fileName" value="file.txt" />
+    <target name="create-file">
+        <touch file="${fileName}" />
+    </target>
+    <target name="delete-file">
+        <delete file="${fileName}" verbose="true" />
+    </target>
+    <target name="file-exists">
+        <available file="${fileName}" property="isFileExists" />
+        <echo if:set="isFileExists" message="The file ${fileName} exists" />
+        <echo unless:set="isFileExists" message="The file ${fileName} not exists" />
+    </target>
+</project>
